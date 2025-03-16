@@ -10,7 +10,7 @@ frame[publicWebpack].push([[Symbol()], {}, function (require) {
     // decode every module to find the one that contains "secret1"
     Object.values(require.m).forEach(function (module, index) {
         let decodedFn = Function.prototype.toString.apply(module).replace(/\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4})/g, match => {
-        const hexCode = match.slice(2);
+            const hexCode = match.slice(2);
             return String.fromCharCode(parseInt(hexCode, 16));
         });
 
